@@ -6,7 +6,7 @@ const Leaders = require('../models/leaders');
 const cors = require('./cors');
 const leaderRouter = express.Router();
 
-leaderRouter.use(bodyParser.json());
+leaderRouter.use( bodyParser.json() );
 
 /* ROUTE GROUP */
 leaderRouter.route('/')

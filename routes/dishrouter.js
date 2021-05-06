@@ -25,13 +25,13 @@ dishRouter.route('/')
 })
 .post(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next)=>{
     Dishes.create(req.body)
-    .then((dish)=>{
+    .then( (dish)=>{
         console.log('Dish Created ', dish);
         res.statusCode = 200;
         res.setHeader('Content-Type','application/json');
         res.json(dish);
-    },(err)=>next(err))
-    .catch((err)=>next(err));
+    },(err)=>next(err) )
+    .catch( (err)=>next(err) );
 })
 .put(cors.corsWithOptions, authenticate.verifyUser, authenticate.verifyAdmin, (req, res, next)=>{
     res.statusCode = 403;
